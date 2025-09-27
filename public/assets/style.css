@@ -1,0 +1,18 @@
+body{
+  background-color: #1f1f1f;
+}
+input, select, .input-group-text{
+  background-color: transparent !important;
+  border-color: #383838 !important;
+  color: rgb(158 169 180) !important;
+}
+label{
+  color: rgb(158 169 180) !important;
+}
+
+h1{
+  color: rgb(158 169 180) !important;
+}
+input::placeholder{
+  color: rgb(158 169 180) !important;
+}
