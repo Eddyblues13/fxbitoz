@@ -70,8 +70,7 @@
                                         onchange="updateDetailsField()">
                                         <option value="" disabled selected>Select Method</option>
                                         <option value="bank_transfer">Bank Transfer</option>
-                                        <option value="paypal">PayPal</option>
-                                        <option value="crypto">Crypto Wallet</option>
+
                                     </select>
                                 </div>
 

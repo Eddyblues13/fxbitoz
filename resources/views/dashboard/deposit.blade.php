@@ -42,11 +42,11 @@
                 <!-- Buy Crypto Dropdown -->
                 <div class="col-md-6">
                     <div class="dropdown">
-                        <button class="btn btn-success dropdown-toggle mb-3" type="button" id="buyCryptoButton"
+                        {{-- <button class="btn btn-success dropdown-toggle mb-3" type="button" id="buyCryptoButton"
                             data-bs-toggle="dropdown" aria-expanded="false"
                             style="font-size: 8px; padding: 10px 20px; margin:10px;">
                             Buy Crypto
-                        </button>
+                        </button> --}}
 
                         <ul class="dropdown-menu" aria-labelledby="buyCryptoButton">
                             <li><a class="dropdown-item" href="https://www.binance.com/" target="_blank">Binance</a>
@@ -103,7 +103,7 @@
                                 </div>
 
 
-                                {{-- Title --}}
+                                {{-- Title
                                 <div class="mb-3">
                                     <p style="color:red;font-size:9pt">
                                         <b>Important</b> <br>
@@ -111,7 +111,7 @@
                                         currency to this address may result to the loss of your deposit.
 
                                     </p>
-                                </div>
+                                </div> --}}
 
                                 {{-- Cost --}}
                                 <div class="mb-3">
@@ -125,13 +125,13 @@
 
 
                                 {{-- Submit Button --}}
-                                <button type="submit" class="btn btn-primary">Copy Wallet Address</button>
+                                <button type="submit" class="btn btn-primary">Copy Account Details</button>
                             </form>
                             {{-- Title --}}
                             <div class="mb-3 mt-4">
                                 <p style="color:red; font-size:9pt">
                                     <b>Tips</b> <br>
-                                    * Notice: Coin will be deposited immediately after network confirmations.<br>
+                                    * Notice: Fund will be deposited immediately after network confirmations.<br>
                                     * You can track your deposit progress on the <a
                                         href="{{route('user.deposits.history')}}" style="color:skyblue">
                                         Deposit

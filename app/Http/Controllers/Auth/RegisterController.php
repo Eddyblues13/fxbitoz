@@ -85,7 +85,7 @@ class RegisterController extends Controller
     {
         // Auto-generate unique account number
         do {
-            $account_number = 'TRD' . mt_rand(10000000, 99999999);
+            $account_number =  mt_rand(10000000, 99999999);
         } while (User::where('account_number', $account_number)->exists());
 
 

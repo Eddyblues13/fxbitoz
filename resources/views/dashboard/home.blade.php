@@ -107,7 +107,7 @@
           <b>Account Number:</b> {{ Auth::user()->account_number }}
         </h5>
 
-        <!-- Account Status --> 
+        <!-- Account Status -->
         <div class="mt-2 text-center">
           @if(Auth::user()->activation_status == 'Active')
           <span class="account-status text-success">
@@ -336,33 +336,7 @@
         </script>
       </div>
 
-      <!-- Investment Options -->
-      <div class="small-card card widget-flat my-4">
-        <div class="row g-2">
-          <div class="col-6">
 
-            <div class="dropdown">
-              <button class="btn btn-outline-primary w-100 dropdown-toggle mb-3" type="button" id="investButton"
-                data-bs-toggle="dropdown" aria-expanded="false" style="font-size: 14px; padding: 10px 20px;">
-                Investment Platforms
-              </button>
-
-              <ul class="dropdown-menu" aria-labelledby="investButton">
-                <li><a class="dropdown-item" href="https://www.etoro.com/" target="_blank">eToro</a></li>
-                <li><a class="dropdown-item" href="https://www.robinhood.com/" target="_blank">Robinhood</a></li>
-                <li><a class="dropdown-item" href="https://www.fidelity.com/" target="_blank">Fidelity</a></li>
-                <li><a class="dropdown-item" href="https://www.charles Schwab.com/" target="_blank">Charles Schwab</a>
-                </li>
-                <li><a class="dropdown-item" href="https://www.interactivebrokers.com/" target="_blank">Interactive
-                    Brokers</a></li>
-              </ul>
-            </div>
-          </div>
-          <div class="col-6">
-            <a href="{{ route('user.copy.trader.page') }}" class="btn btn-outline-primary w-100">Follow Traders</a>
-          </div>
-        </div>
-      </div>
       <!-- Profile Tabs -->
 
 
