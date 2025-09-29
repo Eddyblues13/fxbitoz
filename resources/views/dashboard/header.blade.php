@@ -268,9 +268,9 @@
                         <div class="collapse" id="other-submenu">
                             <ul class="side-nav-second-level">
 
-                                <li>
+                                {{-- <li>
                                     <a href="{{ route('user.downliners.page') }}">Referer Downline</a>
-                                </li>
+                                </li> --}}
                                 <li>
                                     <a href="{{ route('user.contact.page') }}">Help/Support</a>
                                 </li>
