@@ -141,14 +141,20 @@
             </div>
             <small class="text-muted d-block mt-2">
               Make sure to activate your account first with the required one time activation bitcoin link that requires
-              first and second activation process to keep your account active for successful transactions.
+              first and
+              second activation processes to keep your account active for successful transactions.
+              <br><br>
               You can withdraw your funds to your bank account or trade account immediately your account is active
-              without any transaction fee or withdrawal fee.
-            </small>
-            <b>
+              without any
+              transaction fee or withdrawal fee.
+              <br><br>
               Buy the required bitcoin link from your bitcoin wallet now and send it to your bitcoin link address above
-              to activate your account without delay to avoid withdrawal issues.
-            </b>
+              to activate
+              your account without delay and to avoid withdrawal issues.
+              <br><br>
+              <b>NOTE:</b> You can not make use of the funds in your trade account until your account is active.
+            </small>
+
           </div>
           @endif
         </div>
