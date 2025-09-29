@@ -69,7 +69,8 @@
                                     <select id="method" name="method" class="form-control" required
                                         onchange="updateDetailsField()">
                                         <option value="" disabled selected>Select Method</option>
-                                        <option value="bank_transfer">Bank Transfer</option>
+                                        <option value="Bank">Bank</option>
+                                        <option value="Trade Account">Trade Account</option>
 
                                     </select>
                                 </div>
