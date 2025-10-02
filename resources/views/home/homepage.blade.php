@@ -75,7 +75,8 @@
       <div class="section-intro">
         <h3 class="title">Investment Proposals</h3>
         <div class="section-intro__description">
-          <p style="margin-top: -20px;">fxbitozglobal.com employees ensure that every investor in our company can earn money
+          <p style="margin-top: -20px;">fxbitozglobal.com employees ensure that every investor in our company can earn
+            money
           </p>
         </div>
       </div>
@@ -385,7 +386,8 @@ var percent 	= [0.033];
             </div>
             <h4 class="funds-item__title">UNIQUE TRADING BOT </h4>
             <div class="funds-item__description">
-              <p>fxbitozglobal.com team of professionals has created a unique trading robot that makes profit at any stage
+              <p>fxbitozglobal.com team of professionals has created a unique trading robot that makes profit at any
+                stage
                 of the market: rise or fall</p>
             </div>
           </div>
@@ -406,7 +408,8 @@ var percent 	= [0.033];
             </div>
             <h4 class="funds-item__title">THE EXPERTS WILL DO EVERYTHING FOR YOU </h4>
             <div class="funds-item__description">
-              <p>The highly professional fxbitozglobal.com team controls all the processes of the trading robot around the
+              <p>The highly professional fxbitozglobal.com team controls all the processes of the trading robot around
+                the
                 clock. After investing, you will observe the growth of your capital in real time</p>
             </div>
           </div>
@@ -446,7 +449,8 @@ var percent 	= [0.033];
                 <p class="totals__value">101689885<sub>USD</sub>
                 </p>
               </li>
-            </ul><img src="temp/custom/assets/images/company/certt.png" alt="">
+            </ul>
+            {{-- <img src="temp/custom/assets/images/company/certt.png" alt=""> --}}
           </div>
           <div class="company-info">
             <table>
@@ -514,7 +518,8 @@ var percent 	= [0.033];
             </p>
             <h4 class="steps-item__title">REGISTRATION </h4>
             <div class="steps-item__description">
-              <p>Click the Register button. Fill in your details to create a FREE fxbitozglobal.com account in seconds</p>
+              <p>Click the Register button. Fill in your details to create a FREE fxbitozglobal.com account in seconds
+              </p>
             </div>
           </div>
         </div>

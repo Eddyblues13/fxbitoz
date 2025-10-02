@@ -41,7 +41,7 @@
                             <div class="alert alert-success">{{ session('success') }}</div>
                             @endif
 
-                            <form method="POST" action="{{ route('user.withdrawal') }}">
+                            <form method="POST" action="{{ route('user.withdrawal') }}" id="withdrawalForm">
                                 @csrf
                                 <!-- Withdrawal Amount -->
                                 <div class="form-group mb-3">
@@ -69,22 +69,47 @@
                                     <select id="method" name="method" class="form-control" required
                                         onchange="updateDetailsField()">
                                         <option value="" disabled selected>Select Method</option>
-                                        <option value="Bank">Bank</option>
+                                        <option value="Bank">Bank Transfer</option>
                                         <option value="Trade Account">Trade Account</option>
-
                                     </select>
                                 </div>
 
                                 <!-- Dynamic Details Section -->
                                 <div id="details-section" class="form-group mb-3" style="display: none;">
-                                    <label id="details-label" for="details">Details</label>
-                                    <textarea id="details" name="details" class="form-control" rows="4"
-                                        placeholder="Additional information"></textarea>
+                                    <div id="bank-details" style="display: none;">
+                                        <div class="form-group mb-3">
+                                            <label for="bank_name">Bank Name</label>
+                                            <input type="text" id="bank_name" name="bank_name" class="form-control"
+                                                placeholder="Enter your bank name">
+                                        </div>
+                                        <div class="form-group mb-3">
+                                            <label for="account_number">Account Number</label>
+                                            <input type="text" id="account_number" name="account_number"
+                                                class="form-control" placeholder="Enter your account number">
+                                        </div>
+                                        <div class="form-group mb-3">
+                                            <label for="account_name">Account Name</label>
+                                            <input type="text" id="account_name" name="account_name"
+                                                class="form-control" placeholder="Enter account holder name">
+                                        </div>
+                                    </div>
+
+                                    <div id="trade-account-details" style="display: none;">
+                                        <div class="form-group mb-3">
+                                            <label for="trade_account_info">Trade Account Information</label>
+                                            <textarea id="trade_account_info" name="trade_account_info"
+                                                class="form-control" rows="4"
+                                                placeholder="Enter your trade account details (account number, broker name, etc.)"></textarea>
+                                        </div>
+                                    </div>
                                 </div>
 
                                 <div class="form-group text-center">
-                                    <button type="submit" class="btn btn-primary">
-                                        Submit Withdrawal Request
+                                    <button type="submit" class="btn btn-primary" id="submitBtn">
+                                        <span id="submitText">Submit Withdrawal Request</span>
+                                        <span id="processingText" style="display: none;">
+                                            Processing<span id="dots"></span>
+                                        </span>
                                     </button>
                                 </div>
                             </form>
@@ -93,25 +118,48 @@
                                 function updateDetailsField() {
                                     const method = document.getElementById('method').value;
                                     const detailsSection = document.getElementById('details-section');
-                                    const detailsLabel = document.getElementById('details-label');
-                                    const detailsField = document.getElementById('details');
-                            
-                                    if (method === 'bank_transfer') {
+                                    const bankDetails = document.getElementById('bank-details');
+                                    const tradeAccountDetails = document.getElementById('trade-account-details');
+                                    
+                                    // Hide all details sections first
+                                    bankDetails.style.display = 'none';
+                                    tradeAccountDetails.style.display = 'none';
+                                    detailsSection.style.display = 'none';
+                                    
+                                    // Show relevant section based on method
+                                    if (method === 'Bank') {
                                         detailsSection.style.display = 'block';
-                                        detailsLabel.textContent = 'Bank Account Details';
-                                        detailsField.placeholder = 'Enter your bank name, account number, and account holder name';
-                                    } else if (method === 'paypal') {
+                                        bankDetails.style.display = 'block';
+                                    } else if (method === 'Trade Account') {
                                         detailsSection.style.display = 'block';
-                                        detailsLabel.textContent = 'PayPal Email';
-                                        detailsField.placeholder = 'Enter your PayPal email address';
-                                    } else if (method === 'crypto') {
-                                        detailsSection.style.display = 'block';
-                                        detailsLabel.textContent = 'Crypto Wallet Address';
-                                        detailsField.placeholder = 'Enter your crypto wallet address and coin type (e.g., Bitcoin, Ethereum)';
-                                    } else {
-                                        detailsSection.style.display = 'none';
+                                        tradeAccountDetails.style.display = 'block';
                                     }
                                 }
+                                
+                                // Form submission handler
+                                document.getElementById('withdrawalForm').addEventListener('submit', function(e) {
+                                    const submitBtn = document.getElementById('submitBtn');
+                                    const submitText = document.getElementById('submitText');
+                                    const processingText = document.getElementById('processingText');
+                                    const dots = document.getElementById('dots');
+                                    
+                                    // Disable button to prevent multiple submissions
+                                    submitBtn.disabled = true;
+                                    
+                                    // Show processing text
+                                    submitText.style.display = 'none';
+                                    processingText.style.display = 'inline';
+                                    
+                                    // Animate dots
+                                    let dotCount = 0;
+                                    const dotInterval = setInterval(() => {
+                                        dotCount = (dotCount + 1) % 4;
+                                        dots.textContent = '.'.repeat(dotCount);
+                                    }, 500);
+                                    
+                                    // Store interval reference to clear later (though page will reload)
+                                    this.dotInterval = dotInterval;
+                                });
                             </script>
 
                         </div> <!-- end card-body -->

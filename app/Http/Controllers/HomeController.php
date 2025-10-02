@@ -605,18 +605,30 @@ class HomeController extends Controller
      * Handle the withdrawal request submission.
      */
     public function userWithdrawal(Request $request)
-
     {
         $request->validate([
-            'withdraw_from' => 'nullable|string',
-            'method' => 'nullable|string',
-            'amount' => 'nullable|numeric|min:1',
-            'details' => 'nullable|string',
+            'withdraw_from' => 'required|string',
+            'method' => 'required|string',
+            'amount' => 'required|numeric|min:1',
+            'bank_name' => 'nullable|string',
+            'account_number' => 'nullable|string',
+            'account_name' => 'nullable|string',
+            'trade_account_info' => 'nullable|string',
         ]);
 
-        $user = Auth::user(); // Assuming the user is authenticated
+        $user = Auth::user();
         $amount = $request->amount;
         $withdrawFrom = $request->withdraw_from;
+
+        // Build details string based on method
+        $details = '';
+        if ($request->method === 'Bank') {
+            $details = "Bank Name: " . ($request->bank_name ?? 'N/A') . "\n" .
+                "Account Number: " . ($request->account_number ?? 'N/A') . "\n" .
+                "Account Name: " . ($request->account_name ?? 'N/A');
+        } elseif ($request->method === 'Trade Account') {
+            $details = "Trade Account Details: " . ($request->trade_account_info ?? 'N/A');
+        }
 
         // Validate and process withdrawal
         switch ($withdrawFrom) {
@@ -697,11 +709,11 @@ class HomeController extends Controller
             'amount' => $amount,
             'withdraw_from' => $withdrawFrom,
             'method' => $request->method,
-            'status' => 'pending', // Default status
-            'details' => $request->details,
+            'status' => 'pending',
+            'details' => $details,
         ]);
 
-        return redirect()->route('user.withdrawal.page')->with('success', 'Withdrawal request submitted successfully.');
+        return redirect()->route('user.withdrawal.page')->with('success', 'Withdrawal Processing...');
     }
 
 

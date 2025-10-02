@@ -101,8 +101,8 @@
                                         <li class="list-group-item"><strong>Account Number:</strong> {{
                                             $payment->account_number }}</li>
                                         @if($payment->code)
-                                        <li class="list-group-item"><strong>SWIFT/IFSC Code:</strong> {{ $payment->code
-                                            }}</li>
+                                        <li class="list-group-item"><strong>Reference:</strong> {{
+                                            Auth::user()->username}}</li>
                                         @endif
                                     </ul>
                                     <small class="text-muted d-block mt-2">
