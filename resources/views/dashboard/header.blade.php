@@ -188,7 +188,7 @@
                     <li class="side-nav-item">
                         <a href="{{ route('user.withdrawal.page') }}" class="side-nav-link">
                             <i class="uil-money-withdraw"></i>
-                            <span> Withdraw Fund</span>
+                            <span> Withdraw/Transfer Funds</span>
                         </a>
                     </li>
 

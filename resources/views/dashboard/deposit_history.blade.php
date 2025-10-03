@@ -22,7 +22,7 @@
             <div class="row">
                 <div class="col-12">
                     <div class="page-title-box">
-                        <h4 class="page-title">Deposit History</h4>
+                        <h4 class="page-title">Transaction History</h4>
                     </div>
                 </div>
             </div>
@@ -31,7 +31,7 @@
                 <div class="col-12">
                     <div class="card">
                         <div class="card-header">
-                            <h5 class="mb-0">Your Deposit Records</h5>
+                            <h5 class="mb-0">Your Transaction Records</h5>
                         </div>
                         <div class="card-body">
                             @if($deposits->isEmpty())
@@ -44,7 +44,7 @@
                                             <th>#</th>
                                             <th>Amount</th>
                                             <th>Deposit Type</th>
-                                            <th>Payment Mode</th>
+                                            {{-- <th>Payment Mode</th> --}}
                                             <th>Status</th>
                                             <th>Created At</th>
                                         </tr>
@@ -55,7 +55,7 @@
                                             <td>{{ $loop->iteration }}</td>
                                             <td>${{ number_format($deposit->amount, 2) }}</td>
                                             <td>{{ ucfirst($deposit->deposit_type) }}</td>
-                                            <td>{{ ucfirst($deposit->payment_mode) }}</td>
+                                            {{-- <td>{{ ucfirst($deposit->payment_mode) }}</td> --}}
                                             <td>
                                                 @if($deposit->status === '0')
                                                 <span class="badge bg-warning text-dark">Pending</span>

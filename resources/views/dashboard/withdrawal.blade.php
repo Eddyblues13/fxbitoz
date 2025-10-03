@@ -12,7 +12,7 @@
                                 <li class="breadcrumb-item active">Withdrawals</li>
                             </ol>
                         </div>
-                        <h4 class="page-title">Withdraw Funds</h4>
+                        <h4 class="page-title">Withdraw/Transfer Funds</h4>
                     </div>
                 </div>
             </div>
