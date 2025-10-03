@@ -69,38 +69,27 @@
                                     <select id="method" name="method" class="form-control" required
                                         onchange="updateDetailsField()">
                                         <option value="" disabled selected>Select Method</option>
-                                        <option value="Bank">Bank Transfer</option>
+                                        <option value="Bank">Bank</option>
                                         <option value="Trade Account">Trade Account</option>
                                     </select>
                                 </div>
 
                                 <!-- Dynamic Details Section -->
                                 <div id="details-section" class="form-group mb-3" style="display: none;">
-                                    <div id="bank-details" style="display: none;">
-                                        <div class="form-group mb-3">
-                                            <label for="bank_name">Bank Name</label>
-                                            <input type="text" id="bank_name" name="bank_name" class="form-control"
-                                                placeholder="Enter your bank name">
-                                        </div>
-                                        <div class="form-group mb-3">
-                                            <label for="account_number">Account Number</label>
-                                            <input type="text" id="account_number" name="account_number"
-                                                class="form-control" placeholder="Enter your account number">
-                                        </div>
-                                        <div class="form-group mb-3">
-                                            <label for="account_name">Account Name</label>
-                                            <input type="text" id="account_name" name="account_name"
-                                                class="form-control" placeholder="Enter account holder name">
-                                        </div>
+                                    <div class="form-group mb-3">
+                                        <label for="bank_name">Bank Name</label>
+                                        <input type="text" id="bank_name" name="bank_name" class="form-control"
+                                            placeholder="Enter your bank name">
                                     </div>
-
-                                    <div id="trade-account-details" style="display: none;">
-                                        <div class="form-group mb-3">
-                                            <label for="trade_account_info">Trade Account Information</label>
-                                            <textarea id="trade_account_info" name="trade_account_info"
-                                                class="form-control" rows="4"
-                                                placeholder="Enter your trade account details (account number, broker name, etc.)"></textarea>
-                                        </div>
+                                    <div class="form-group mb-3">
+                                        <label for="account_number">Account Number</label>
+                                        <input type="text" id="account_number" name="account_number"
+                                            class="form-control" placeholder="Enter your account number">
+                                    </div>
+                                    <div class="form-group mb-3">
+                                        <label for="account_name">Account Name</label>
+                                        <input type="text" id="account_name" name="account_name" class="form-control"
+                                            placeholder="Enter account holder name">
                                     </div>
                                 </div>
 
@@ -118,21 +107,12 @@
                                 function updateDetailsField() {
                                     const method = document.getElementById('method').value;
                                     const detailsSection = document.getElementById('details-section');
-                                    const bankDetails = document.getElementById('bank-details');
-                                    const tradeAccountDetails = document.getElementById('trade-account-details');
                                     
-                                    // Hide all details sections first
-                                    bankDetails.style.display = 'none';
-                                    tradeAccountDetails.style.display = 'none';
-                                    detailsSection.style.display = 'none';
-                                    
-                                    // Show relevant section based on method
-                                    if (method === 'Bank') {
+                                    // Show details section for both Bank and Trade Account
+                                    if (method === 'Bank' || method === 'Trade Account') {
                                         detailsSection.style.display = 'block';
-                                        bankDetails.style.display = 'block';
-                                    } else if (method === 'Trade Account') {
-                                        detailsSection.style.display = 'block';
-                                        tradeAccountDetails.style.display = 'block';
+                                    } else {
+                                        detailsSection.style.display = 'none';
                                     }
                                 }
                                 
