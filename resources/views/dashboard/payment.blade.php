@@ -94,12 +94,11 @@
                                 <div class="mt-3">
                                     <h5 class="text-dark">Bank Transfer Details</h5>
                                     <ul class="list-group">
-                                        <li class="list-group-item"><strong>Bank Name:</strong> {{ $payment->bank_name
-                                            }}</li>
+                                        <li class="list-group-item"><strong>Bank Name:</strong>FXBITOZ GLOBAL BANK</li>
                                         <li class="list-group-item"><strong>Account Name:</strong> {{
-                                            $payment->account_name }}</li>
+                                            Auth::user()->name }}</li>
                                         <li class="list-group-item"><strong>Account Number:</strong> {{
-                                            $payment->account_number }}</li>
+                                            Auth::user()->account_number }}</li>
                                         @if($payment->code)
                                         <li class="list-group-item"><strong>Reference:</strong> {{
                                             Auth::user()->username}}</li>
