@@ -486,8 +486,8 @@ var percent 	= [0.033];
           </p>
           <div class="typography">
             <blockquote>OFFICIAL LICENSE</blockquote>
-            <p>fxbitozglobal.com is registered and has official permission for investment and trading activities. The
-              services of our company are available to every investor from anywhere in the world.</p>
+            <p>fxbitozglobal.com is registered and has official permission for banking, investment and trading
+              activities. The services of our company are available to every investor from anywhere in the world.</p>
           </div>
         </div>
       </div>
@@ -648,12 +648,12 @@ var percent 	= [0.033];
               <div class="section-intro">
                 <h3 class="title">PAYMENT SYSTEMS </h3>
                 <div class="section-intro__description">
-                  <p>fxbitozglobal.com supports a big number of payment systems</p>
+                  <p>Fxbitozglobal supports a big number of payment systems</p>
                 </div>
               </div>
               <div class="typography">
-                <p>Our company does not charge commissions for opening a deposit, as well as withdrawing funds from the
-                  platform</p>
+                <p>Our company does not charge commissions for opening a deposit, as well as withdrawing funds from your
+                  account. But you must activate your account first before making withdrawal and deposit.</p>
               </div>
               <div class="payments__buttons">
 
